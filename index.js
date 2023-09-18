@@ -72,12 +72,33 @@ document.getElementById("salah-btn").addEventListener("click",function(){
 })
 document.getElementById("calculate").addEventListener("click",function(){
 
-    const playerPrice = document.getElementById("player-input").value 
+    const playerPrice = getValue("player-input") 
     const expance = document.getElementById("expanse") 
  const playerExpance = playerPrice*count;
  expance.innerText = playerExpance
 
 
 })
+document.getElementById("calculate-total").addEventListener("click",function(){
+
+    const total = document.getElementById("total") 
+    const expance = document.getElementById("expanse").innerText
+     
+
+  const manager = getValue("manager")
+  const coach = getValue("coach")
+ const  totalSpend = parseFloat(expance)+parseFloat(manager)+parseFloat(coach);
+ total.innerText = totalSpend
+})
+
+
+
+
+
+function getValue(id){
+
+    const value = document.getElementById(id).value
+    return value 
+}
  
  
